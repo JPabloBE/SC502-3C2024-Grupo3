@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeAway</title>
+  <meta charset="UTF-8" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="estilos/stylesLogin.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/imgs/logoHA.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosPropietarios.html">Mis Alojamientos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosHuespedes.html">Alojamientos Disponibles</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Este div se llenará dinámicamente -->
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <section class="vh-100 gradient-custom d-flex align-items-center justify-content-center">
+    <div class="overlay"></div>
+
+    <div class="container py-5" style="z-index: 2">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2">Iniciar Sesion</h2>
+                <p class="text-white-50 mb-5">Ingrese su usuario y contraseña</p>
+
+                <!-- Formulario de inicio de sesión -->
+                <form id="loginForm">
+                  <div class="form-outline form-white mb-4">
+                    <input class="form-control form-control-lg" type="text" name="username" id="username"
+                      placeholder="Username" required />
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <input class="form-control form-control-lg" type="password" name="password" id="password"
+                      placeholder="Password" required />
+                  </div>
+
+                  <p class="small mb-5 pb-lg-2">
+                    Olvidaste tu contraseña?
+                    <a class="text-white-50" href="/registro/recordar">Recuperar Contraseña</a>
+                  </p>
+
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
+                </form>
+              </div>
+              <div>
+                <p class="mb-0">
+                  Aún no tienes una cuenta?
+                  <a href="registrar.html" class="text-white-50 fw-bold">Registrar</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="error-message" class="mt-3" style="display: none">
+            <h3 class="text-center text-white"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container px-3 py-2">
+      <section class="mb-2 w-50 mx-auto">
+        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+      </section>
+    </div>
+    <div class="text-center py-2 footer-bottom">
+      &COPY; Derechos reservados
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (opcional, para funcionalidades interactivas) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+
+</html>

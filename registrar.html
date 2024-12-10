@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeAways - Registro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="estilos/stylesRegistrar.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/imgs/logoHA.png" alt="Logo" width="35" height="35"
+                        class="d-inline-block align-text-top" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alojamientosPropietarios.html">Mis Alojamientos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="alojamientosHuespedes.html">Alojamientos Disponibles</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Formulario de nueva cuenta -->
+    <section class="nuevo-usuario vh-100 gradient-custom">
+        <div class="overlay"></div>
+
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-dark text-white">
+                        <div class="card-body p-5 text-center">
+
+                            <h2 class="fw-bold mb-2">Agregar Usuario</h2>
+                            <p class="text-white-50 mb-5">Complete todos los campos requeridos con tus datos personales
+                            </p>
+
+                            <!-- Formulario de registro -->
+                            <form id="registerForm" method="POST" action="backend/registrar.php"
+                                onsubmit="return handleSubmit(event)">
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Nombre de Usuario</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" name="contrasena"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="usuario_imagen" class="form-label">Imagen de Usuario (opcional)</label>
+                                    <input type="url" class="form-control" id="usuario_imagen" name="usuario_imagen"
+                                        placeholder="URL de la imagen">
+                                </div>
+
+                                <!-- Selección de rol -->
+                                <div class="mb-4">
+                                    <h5>Seleccione el Tipo de Perfil:</h5>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-outline-light btn-lg" id="rolHuesped"
+                                            value="2" onclick="selectRole(this)">
+                                            <i class='fas fa-user'></i> Huésped
+                                        </button>
+                                        <button type="button" class="btn btn-outline-light btn-lg" id="rolPropietario"
+                                            value="3" onclick="selectRole(this)">
+                                            <i class='fas fa-home'></i> Propietario
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Botón para crear cuenta -->
+                                <button type="submit" class="btn btn-outline-light btn-lg px-5">
+                                    Crear Cuenta
+                                </button>
+                            </form>
+
+                            <!-- Enlace para regresar -->
+                            <div>
+                                <a href="/login.html" class='text-white-50 fw-bold'>
+                                    <i class='fas fa-arrow-left'></i> Regresar
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class='footer text-center'>
+        <div class='container px-3 py-2'>
+            <section class='mb-2 w-50 mx-auto'>
+                <a href='#!' class='text-white'><i class='fab fa-facebook-f fa-lg'></i></a>
+                <a href='#!' class='text-white'><i class='fab fa-twitter fa-lg mx-4 px-2'></i></a>
+                <a href='#!' class='text-white'><i class='fab fa-google fa-lg'></i></a>
+            </section>
+        </div>
+        <div class='text-center py-2 footer-bottom'>
+            &COPY; Derechos reservados
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js'></script>
+    <!-- Script para manejar el registro -->
+    <script src="js/navbar.js"></script>
+    <script src="js/registrar.js"></script>
+    <!-- Asegúrate de tener este archivo -->
+
+    <script>
+        let selectedRole = null;
+
+        function selectRole(button) {
+            selectedRole = button.value; // Guardar el rol seleccionado
+
+            // Remover clase 'active' de ambos botones
+            let buttons = document.querySelectorAll('.btn-group .btn');
+            buttons.forEach((btn) => {
+                btn.classList.remove('active', 'btn-success');
+            });
+
+            // Añadir la clase 'active' y 'btn-success' al botón seleccionado
+            button.classList.add('active', 'btn-success');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Fondo claro */
+    color: #343a40; /* Texto principal */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .header .navbar-brand img {
+    filter: brightness(0) invert(1); /* Blanco para el logo */
+  }
+  
+  .navbar-nav .nav-link {
+    color: white;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Amarillo dorado */
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #ffc107; /* Resaltar el activo */
+  }
+  
+  .btn-outline-dark {
+    border-color: #ffc107;
+    color: #ffc107;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #ffc107;
+    color: #343a40;
+  }
+  
+  /* Card styles */
+  .card {
+    border: none;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #6c757d; /* Texto gris */
+  }
+  
+  .card .btn-success {
+    background-color: #198754; /* Verde */
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card .btn-success:hover {
+    background-color: #145a38; /* Verde más oscuro */
+  }
+  
+  .card .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+  }
+  
+  .card .form-control:focus {
+    border-color: #198754;
+    box-shadow: 0 0 5px rgba(25, 135, 84, 0.5); /* Efecto de foco */
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: white;
+    padding: 20px 0;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer a:hover {
+    color: #ffc107; /* Amarillo dorado */
+  }
+  
+  .footer-bottom {
+    background-color: #212529; /* Más oscuro */
+    color: #adb5bd; /* Gris claro */
+    padding: 10px 0;
+    font-size: 0.8rem;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+  
+    .card {
+      margin-bottom: 20px;
+    }
+  }
+  /* Estilos para el encabezado y los botones */
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .nav-link.active {
+    font-weight: bold;
+    color: #ffc107 !important; /* Amarillo dorado para resaltar la página activa */
+  }
+  
+  .navbar .btn-outline-light {
+    border-color: #ffc107;
+    color: #ffc107;
+  }
+  
+  .navbar .btn-outline-light:hover {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  /* Estilo del título principal */
+  #pageHeaderTitle {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    background-color: #0d6efd; /* Azul Bootstrap */
+    color: #fff; /* Blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .footer a {
+    color: #ffc107;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  

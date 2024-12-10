@@ -3,7 +3,7 @@ require "message_log.php";
 // Datos de conexión obtenidos del enlace
 $host = 'autorack.proxy.rlwy.net'; // Host del servidor MySQL
 $port = '12503';                   // Puerto
-$dbname = 'railway';               // Nombre de la base de datos (corrige aquí si es diferente)
+$dbname = 'homeAwayDB';               // Nombre de la base de datos (corrige aquí si es diferente)
 $user = 'root';                    // Usuario de la base de datos
 $password = 'KEPQMjcjOTBcroMikBskUdxPfFUklJMv'; // Contraseña de la base de datos
 try {

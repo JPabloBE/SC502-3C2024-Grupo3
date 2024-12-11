@@ -5,6 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header('Content-Type: application/json');
 
 require 'dbConection.php';
+session_start();
 
 try {
     // Obtener los datos enviados en el cuerpo de la solicitud
@@ -34,17 +35,22 @@ try {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($usuario && password_verify($password, $usuario['contrasena'])) {
-        // Enviar datos del usuario al front-end
-        echo json_encode([
-            'success' => true,
-            'message' => 'Inicio de sesión exitoso',
+        // Guardar datos del usuario en la sesión
+        $_SESSION['user'] = [
             'id_usuario' => $usuario['id_usuario'],
             'rol' => $usuario['rol'],
             'nombre' => $usuario['nombre'],
             'username' => $usuario['username'],
             'email' => $usuario['email'],
             'telefono' => $usuario['telefono'],
-            'usuario_imagen' => $usuario['usuario_imagen'], 
+            'usuario_imagen' => $usuario['usuario_imagen']
+        ];
+
+        // Enviar datos del usuario al front-end
+        echo json_encode([
+            'success' => true,
+            'message' => 'Inicio de sesión exitoso',
+            'user' => $_SESSION['user']
         ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas']);
@@ -55,3 +61,4 @@ try {
     error_log("Error en login: " . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'Error en el servidor']);
 }
+?>

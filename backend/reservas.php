@@ -6,8 +6,13 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 require 'dbConection.php';
 header('Content-Type: application/json');
 
+session_start();
+
 try {
     global $pdo;
+
+    // Verificar si el usuario está logueado
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
     // Realiza la consulta para obtener los alojamientos
     $stmt = $pdo->query("SELECT 
@@ -19,10 +24,13 @@ try {
         FROM homeAwayDB.Alojamiento");
     $alojamientos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo json_encode($alojamientos); // Devuelve los resultados como JSON
+    // Devuelve los resultados como JSON incluyendo datos del usuario logueado
+    echo json_encode([
+        'user' => $user,
+        'alojamientos' => $alojamientos
+    ]);
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode(['error' => 'Error al obtener los alojamientos']);
 }
 ?>
-

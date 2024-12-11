@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const user = JSON.parse(localStorage.getItem("usuario"));
 
     if (user) {
-        // Eliminar el botón de inicio de sesión
+        // Eliminar el botón de inicio de sesión si el usuario está logueado
         const loginButton = document.querySelector(".btn-outline-dark");
         if (loginButton) loginButton.remove();
 
@@ -22,10 +22,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navbarContainer.appendChild(userSection);
 
+        // Si el usuario es propietario (rol=3), mostrar la opción de "Gestión de Alojamientos"
+        if (user.rol === 3) {
+            const gestionAlojamientosLink = document.getElementById("gestionAlojamientosLink");
+            if (gestionAlojamientosLink) {
+                gestionAlojamientosLink.style.display = "inline";  // Mostrar el enlace
+            }
+        }
+
         // Manejar cierre de sesión
         document.getElementById("logoutButton").addEventListener("click", function () {
             localStorage.removeItem("usuario");
             window.location.reload();
         });
+    } else {
+        // Si no hay usuario, se puede ocultar el botón de cierre de sesión y mostrar el login
+        const loginButton = document.querySelector(".btn-outline-dark");
+        if (loginButton) loginButton.style.display = "inline"; // Mostrar el login si no hay usuario
     }
 });

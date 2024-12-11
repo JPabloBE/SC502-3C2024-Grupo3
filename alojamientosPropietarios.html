@@ -27,7 +27,8 @@
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="alojamientosPropietarios.html">Mis Alojamientos</a>
+              <a class="nav-link" href="alojamientosPropietarios.html" style="display: none;"
+                id="gestionAlojamientosLink">Gestión de Alojamientos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="alojamientosHuespedes.html">Alojamientos Disponibles</a>
@@ -51,7 +52,8 @@
       data-bs-target="#modal-alojamiento">Agregar Alojamiento</button>
 
     <!-- Contenedor para mensajes -->
-    <div id="message-container" class="alert" style="display: none;"></div>
+    <div id="alert-container"></div>
+
 
     <!-- Contenedor de alojamientos -->
     <div id="alojamientos-container" class="row">
@@ -69,9 +71,6 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
 
-        <!-- Contenedor para mensajes -->
-        <div id="message-container" class="alert" style="display: none;"></div>
-        
         <div class="modal-body">
           <form id="form-alojamiento">
             <!-- Input oculto para id en edición -->
@@ -168,6 +167,7 @@
   <script src='js/alojamientosPropietarios.js'></script>
   <!-- Script para manejar la navegación -->
   <script src='js/navbar.js'></script>
+
 </body>
 
 </html>

@@ -1,134 +1,151 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Navbar */
-  .header {
-    background-color: #f8f9fa;
-  }
-  
-  .navbar-brand img {
-    width: 35px;
-    height: 35px;
-  }
-  
-  .navbar-nav .nav-link.active {
-    font-weight: bold;
-  }
-  
-  .nav-item .avatar {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  /* Footer */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.header {
+  background-color: #f8f9fa;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente los elementos */
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  /* Asegura que los enlaces estén centrados verticalmente */
+}
+
+.nav-item {
+  margin-right: 15px;
+  /* Espaciado entre los elementos del menú */
+}
+
+.navbar-brand img {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+.nav-item .avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+  background-color: #212529;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.footer-bottom {
+  background-color: #212529;
+  color: #93928e;
+}
+
+/* Carrusel */
+.slide-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.carousel-caption-static {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(33, 36, 41, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+}
+
+.carousel {
+  margin-bottom: 0;
+}
+
+/* Formularios */
+.filtros-rapidos .form-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filtros-rapidos .form-group {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.filtros-rapidos label {
+  display: block;
+  text-align: center;
+}
+
+.filtros-rapidos .btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  height: 38px;
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
   .footer {
-    background-color: #212529;
-    padding: 1rem 0;
-    position: relative;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  
-  .footer-bottom {
-    background-color: #212529;
-    color: #93928e;
-  }
-  
-  /* Carrusel */
-  .slide-image {
-    width: 100%;
-    height: 100vh;  
-    object-fit: cover; 
-    filter: brightness(0.7); 
-  }
-  
-  .carousel-caption-static {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    background-color: rgba(33, 36, 41, 0.7); 
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-  }
-  
-  .carousel {
-    margin-bottom: 0; 
-  }
-  
-  /* Formularios */
-  .filtros-rapidos .form-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .filtros-rapidos .form-group {
-    flex: 1;
-    min-width: 120px;
-    text-align: center;
-  }
-  
-  .filtros-rapidos label {
-    display: block;
-    text-align: center;
-  }
-  
-  .filtros-rapidos .btn {
-    width: 100%;
-    margin-top: 1.5rem;
-    border-radius: 0.5rem;
-    height: 38px;
-  }
-  
-  /* Para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    .footer {
-      padding-top: 0; 
-      margin-top: -1px; 
-    }
-    
-    .carousel-item {
-      height: 60vh; 
-    }
-    
-    .main-content-index {
-      padding-bottom: 0;
-      margin-bottom: -1px; 
-    }
-  }
-  
-  /* Asegurarse de que el footer quede al final y no haya espacio extra */
-  body, html {
-    height: 100%;  
-    margin: 0;  
-    display: flex;
-    flex-direction: column; 
-  }
-  
-  .main-content-index {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 0;
-  }
-  
-  /* Agregar flex para que todo el contenido ocupe la pantalla */
-  footer {
-    margin-top: 0;  
     padding-top: 0;
+    margin-top: -1px;
   }
-  
+
+  .carousel-item {
+    height: 60vh;
+  }
+
+  .main-content-index {
+    padding-bottom: 0;
+    margin-bottom: -1px;
+  }
+}
+
+/* Asegurarse de que el footer quede al final y no haya espacio extra */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-index {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+/* Agregar flex para que todo el contenido ocupe la pantalla */
+footer {
+  margin-top: 0;
+  padding-top: 0;
+}

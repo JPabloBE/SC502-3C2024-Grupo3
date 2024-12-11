@@ -7,7 +7,7 @@
     <title>Alojamientos Filtrados</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="estilos/stylesAlojamientosHuespedes.css" rel="stylesheet" />
+    <link href="estilos/stylesAlojamientosFiltrados.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -61,15 +61,23 @@
                 <input type="number" name="precioSup" id="precioSup" class="form-control" placeholder="$500" />
             </div>
             <div class="form-group">
-                <label for="capacidad">Capacidad</label>
+                <label for="capacidad">Capacidad:</label>
                 <input type="number" name="capacidad" id="capacidad" class="form-control"
                     placeholder="Número de Personas" />
             </div>
+
+            <!-- Botón de Buscar -->
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-light">Buscar</button>
+                <button type="submit" class="btn btn-outline-light btn-sm">Buscar</button>
+            </div>
+
+            <!-- Botón de Limpiar -->
+            <div class="form-group">
+                <button type="reset" class="btn btn-outline-danger btn-sm">Limpiar</button>
             </div>
         </div>
     </form>
+
     <!-- Sección para mostrar los alojamientos filtrados -->
     <div id="alojamiento-list"></div>
 

@@ -1,0 +1,223 @@
+/* Estilos personalizados */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.gradient-custom {
+    background-image: url('/imgs/imagenCasa1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 1rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.btn-outline-light {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-outline {
+    position: relative;
+}
+
+.form-outline input {
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.form-label {
+    font-weight: normal;
+}
+
+.text-white-50 {
+    opacity: 0.7;
+}
+
+footer {
+    background-color: #212529;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la caja de filtros */
+.filtros-rapidos {
+    background-color: rgb(0, 0, 0); /* Fondo oscuro con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px; /* Para que no se expanda demasiado */
+    margin: 0 auto; /* Centrado en la pantalla */
+    color: #fff;
+}
+
+.filtros-rapidos .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtros-rapidos .form-group {
+    width: 100%;
+}
+
+.filtros-rapidos .form-group label {
+    font-weight: bold;
+}
+
+.filtros-rapidos .form-control {
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.filtros-rapidos .btn {
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    .card-body {
+        padding: 1.5rem;
+    }
+    .form-outline input {
+        padding: 0.8rem;
+    }
+}
+
+/* Card */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.603);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    display: flex; /* Permite el uso de flexbox */
+    flex-direction: column; /* Alinea los hijos en columna */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta ligeramente */
+    box-shadow: 0 12px 24px #0000004d; /* Sombra más pronunciada */
+    border: 2px solid #a8a8a8; /* Borde de color gris */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes de las tarjetas */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 1rem;
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta ocupe el espacio restante */
+}
+
+.card-title {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+/* Card details */
+.anfitrion {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.anfitrion-img {
+    width: 60px; /* Nuevo tamaño */
+    height: 60px; /* Nuevo tamaño */
+    border-radius: 50%; /* Mantiene la forma circular */
+    object-fit: cover; /* Asegura que la imagen se recorte sin deformarse */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+    border: 2px solid #ddd; /* Borde gris claro */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ubicacion img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .card-img-top {
+       height: 150px; /* Ajuste para pantallas pequeñas */
+   }
+
+   .anfitrion-img {
+       width: 50px; /* Tamaño ajustado para pantallas pequeñas */
+       height: 50px; /* Tamaño ajustado para pantallas pequeñas */
+   }
+}

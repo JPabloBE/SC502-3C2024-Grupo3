@@ -1,170 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomeAway</title>
-    <meta charset="UTF-8" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="estilos/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            <img
-              src="/imgs/logoHA.png"
-              alt="Logo"
-              width="35"
-              height="35"
-              class="d-inline-block align-text-top"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="alojamientosPropietarios.html"
-                  >Mis Alojamientos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="detalleAlojamiento.html"
-                  >Alojamientos Disponibles</a
-                >
-              </li>
-            </ul>
 
-            <!-- Se muestra cuando el usuario inicia sesion -->
-            <!-- <ul class="navbar-nav ms-auto">
-              <li class="nav-item d-flex align-items-center">
-                <a
-                  href="/usuario/perfil"
-                  class="d-flex align-items-center text-decoration-none"
-                >
-                  <img
-                    src="/imgs/usuario.png"
-                    alt="Foto del Usuario"
-                    class="avatar me-2"
-                  />
-                  <span class="nav-link">Usuario</span>
-                </a>
-                <form method="post" action="/logout" class="ms-3">
-                  <button class="btn btn-dark">
-                    <i class="fas fa-sign-out-alt"></i>
-                  </button>
-                </form>
-              </li>
-            </ul> -->
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeAway</title>
+  <meta charset="UTF-8" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="estilos/stylesIndex.css" rel="stylesheet" />
+</head>
 
-          <div>
-            <a class="btn btn-outline-dark" href="/login" role="button"
-              >Log In</a
-            >
-          </div>
+<body>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/imgs/logoHA.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosPropietarios.html">Gestión de Alojamientos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosHuespedes.html">Alojamientos Disponibles</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
+        <div>
+          <a class="btn btn-outline-dark" href="login.html" role="button">Log In</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  <!-- Contenido principal -->
+  <div class="main-content-index">
     <!-- Carrusel de Imágenes en Home -->
-    <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselHome" class="carousel slide bg-dark" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="/imgs/imagenCasa2.jpg"
-            class="d-block w-100 slide-image"
-            alt="Slide 1"
-          />
+          <img src="/imgs/imagenCasa2.jpg" class="d-block w-100 slide-image" alt="Slide 1" />
         </div>
         <div class="carousel-item">
-          <img
-            src="/imgs/imagenCasa1.jpg"
-            class="d-block w-100 slide-image"
-            alt="Slide 2"
-          />
+          <img src="/imgs/imagenCasa1.jpg" class="d-block w-100 slide-image" alt="Slide 2" />
         </div>
         <div class="carousel-item">
-          <img
-            src="/imgs/imagenCasa3.jpg"
-            class="d-block w-100 slide-image"
-            alt="Slide 3"
-          />
+          <img src="/imgs/imagenCasa3.jpg" class="d-block w-100 slide-image" alt="Slide 3" />
         </div>
       </div>
 
-      <!-- Caja para ingresar filtros de Búsqueda -->
       <div class="carousel-caption-static">
         <h2>Empieza Tus Vacaciones Ahora</h2>
         <p>Planea tus Vacaciones con Nosotros</p>
-
         <!-- Caja de búsqueda simplificada -->
-        <form
-          action="/usuario/alojamientos/filtros/filtrar"
-          method="POST"
-          class="filtros-rapidos"
-        >
+        <form action="/usuario/alojamientos/filtros/filtrar" method="POST" class="filtros-rapidos">
           <div class="form-row">
             <div class="form-group">
               <label for="ubicacion">Ubicación:</label>
-              <input
-                type="text"
-                name="ubicacion"
-                id="ubicacion"
-                class="form-control"
-                placeholder="Ciudad, región..."
-              />
+              <input type="text" name="ubicacion" id="ubicacion" class="form-control" placeholder="Ciudad, región..." />
             </div>
             <div class="form-group">
               <label for="precioInf">Precio mín:</label>
-              <input
-                type="number"
-                name="precioInf"
-                id="precioInf"
-                class="form-control"
-                placeholder="$0"
-              />
+              <input type="number" name="precioInf" id="precioInf" class="form-control" placeholder="$0" />
             </div>
             <div class="form-group">
               <label for="precioSup">Precio máx:</label>
-              <input
-                type="number"
-                name="precioSup"
-                id="precioSup"
-                class="form-control"
-                placeholder="$500"
-              />
+              <input type="number" name="precioSup" id="precioSup" class="form-control" placeholder="$500" />
             </div>
             <div class="form-group">
               <label for="capacidad">Capacidad</label>
-              <input
-                type="number"
-                name="capacidad"
-                id="capacidad"
-                class="form-control"
-                placeholder="Número de Personas"
-              />
+              <input type="number" name="capacidad" id="capacidad" class="form-control"
+                placeholder="Número de Personas" />
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-outline-light">
@@ -175,45 +90,32 @@
         </form>
       </div>
 
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselHome"
-        data-bs-slide="prev"
-      >
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselHome"
-        data-bs-slide="next"
-      >
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </div>
 
-    <footer class="footer text-center">
-      <div class="container px-3 py-2">
-        <section class="mb-2 w-50 mx-auto">
-          <a href="#!" class="text-white"
-            ><i class="fab fa-facebook-f fa-lg"></i
-          ></a>
-          <a href="#!" class="text-white"
-            ><i class="fab fa-twitter fa-lg mx-4 px-2"></i
-          ></a>
-          <a href="#!" class="text-white"
-            ><i class="fab fa-google fa-lg"></i
-          ></a>
-        </section>
-      </div>
-      <div class="text-center py-2 footer-bottom">
-        &COPY; Derechos reservados
-      </div>
-    </footer>
+  <footer class="footer text-center">
+    <div class="container px-3 py-2">
+      <section class="mb-2 w-50 mx-auto">
+        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+      </section>
+    </div>
+    <div class="text-center py-2 footer-bottom">
+      &COPY; Derechos reservados
+    </div>
+  </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+</body>
+
 </html>

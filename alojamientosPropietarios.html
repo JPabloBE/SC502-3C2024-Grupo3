@@ -1,374 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lista de Alojamientos</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="estilos/styles.css" rel="stylesheet" />
-  </head>
-  <body id="home-page">
-    <header class="header">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            <img
-              src="/imgs/logoHA.png"
-              alt="Logo"
-              width="35"
-              height="35"
-              class="d-inline-block align-text-top"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/propietario/alojamientos"
-                  >Mis Alojamientos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/usuario/alojamientos"
-                  >Alojamientos Disponibles</a
-                >
-              </li>
-            </ul>
 
-            <!-- Se muestra cuando el usuario inicia sesion -->
-            <!-- <ul class="navbar-nav ms-auto">
-                <li class="nav-item d-flex align-items-center">
-                  <a
-                    href="/usuario/perfil"
-                    class="d-flex align-items-center text-decoration-none"
-                  >
-                    <img
-                      src="/imgs/usuario.png"
-                      alt="Foto del Usuario"
-                      class="avatar me-2"
-                    />
-                    <span class="nav-link">Usuario</span>
-                  </a>
-                  <form method="post" action="/logout" class="ms-3">
-                    <button class="btn btn-dark">
-                      <i class="fas fa-sign-out-alt"></i>
-                    </button>
-                  </form>
-                </li>
-              </ul> -->
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Alojamientos</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="estilos/styles.css" rel="stylesheet" />
+</head>
 
-          <div>
-            <a class="btn btn-outline-dark" href="/login" role="button"
-              >Log In</a
-            >
-          </div>
+<body id="home-page">
+  <header class="header">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/imgs/logoHA.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosPropietarios.html">Gestión de Alojamientos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="alojamientosHuespedes.html">Alojamientos Disponibles</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
-    <!-- Sección del botón de agregar alojamiento -->
-    <div id="add-alojamiento-section" class="py-4">
-      <button id="add-alojamiento-btn" class="btn btn-primary">
-        Agregar Alojamiento
-      </button>
-    </div>
 
-    <!-- Listado de alojamientos -->
-    <section id="alojamientos-list-section" class="light">
-      <h1 id="list-title" class="text-center">Alojamientos de NombreUsario</h1>
-      <div id="alojamientos-container" class="container">
-        <div class="row g-4">
-          <!-- 'g-4' agrega espaciado entre las columnas -->
-          <!-- Ejemplo de tarjeta de alojamiento -->
-          <div class="col-12 col-sm-6 col-md-4">
-            <!-- Columna para tarjetas -->
-            <div class="card">
-              <img
-                src="https://59d27daa.rocketcdn.me/wp-content/uploads/2023/07/How-to-Buy-a-Beach-House.jpeg"
-                class="card-img-top"
-                alt="Imagen del alojamiento"
-              />
-              <div class="card-body">
-                <h5 class="card-title alojamiento-nombre">
-                  Nombre del Alojamiento
-                </h5>
-                <p class="card-text alojamiento-desc">
-                  Descripción breve del alojamiento.
-                </p>
-                <p class="card-text alojamiento-precio">$100 por noche</p>
-                <div class="card-footer">
-                  <div class="button-group">
-                    <button class="btn btn-primary edit-alojamiento-btn">
-                      Editar
-                    </button>
-                    <button class="btn btn-danger delete-alojamiento-btn">
-                      Eliminar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card">
-              <img
-                src="https://a0.muscache.com/im/pictures/d03d9889-b6c3-42f5-ad84-2c6c4b7a57b2.jpg"
-                class="card-img-top"
-                alt="Imagen del alojamiento"
-              />
-              <div class="card-body">
-                <h5 class="card-title alojamiento-nombre">
-                  Nombre del Alojamiento
-                </h5>
-                <p class="card-text alojamiento-desc">
-                  Descripción breve del alojamiento.
-                </p>
-                <p class="card-text alojamiento-precio">$100 por noche</p>
-                <div class="card-footer">
-                  <div class="button-group">
-                    <button class="btn btn-primary edit-alojamiento-btn">
-                      Editar
-                    </button>
-                    <button class="btn btn-danger delete-alojamiento-btn">
-                      Eliminar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4">
-            <div class="card">
-              <img
-                src="https://res.cloudinary.com/evolve-vacation-rental-network/images/f_auto,q_auto/v1642101202/evolvevacationrental.com/IsABeachHouseAGoodInvestment-Blog_Blog-Featured-Image-1/IsABeachHouseAGoodInvestment-Blog_Blog-Featured-Image-1.jpg?_i=AA"
-                class="card-img-top"
-                alt="Imagen del alojamiento"
-              />
-              <div class="card-body">
-                <h5 class="card-title alojamiento-nombre">
-                  Nombre del Alojamiento
-                </h5>
-                <p class="card-text alojamiento-desc">
-                  Descripción breve del alojamiento.
-                </p>
-                <p class="card-text alojamiento-precio">$100 por noche</p>
-                <div class="card-footer">
-                  <div class="button-group">
-                    <button class="btn btn-primary edit-alojamiento-btn">
-                      Editar
-                    </button>
-                    <button class="btn btn-danger delete-alojamiento-btn">
-                      Eliminar
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div>
+          <a class="btn btn-outline-dark" href="login.html" role="button">Log In</a>
         </div>
       </div>
-    </section>
+    </nav>
+  </header>
 
-    <!-- Fondo oscuro (overlay) -->
-    <div id="overlay" class="overlay"></div>
+  <!-- Contenedor principal -->
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">Gestión de Alojamientos</h1>
 
-    <!-- Modal para agregar/editar alojamientos -->
-    <div id="modal-alojamiento" class="modal" style="display: none">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 id="modal-title" class="modal-title">Actualizar Alojamiento</h4>
-            <button type="button" class="close" onclick="closeModal()">
-              &times;
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="form-alojamiento">
-              <input type="hidden" id="usuario-id" name="usuario" />
+    <!-- Botón para agregar nuevo alojamiento -->
+    <button id="add-alojamiento-btn" class="btn btn-success mb-4" data-bs-toggle="modal"
+      data-bs-target="#modal-alojamiento">Agregar Alojamiento</button>
 
-              <div class="mb-3">
-                <label for="nombre">Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  name="nombre"
-                  required
-                />
-              </div>
+    <!-- Contenedor para mensajes -->
+    <div id="alert-container"></div>
 
-              <div class="mb-3">
-                <label for="descripcion">Descripción</label>
-                <textarea
-                  class="form-control"
-                  id="descripcion"
-                  name="descripcion"
-                ></textarea>
-              </div>
 
-              <div class="mb-3">
-                <label for="alojamientoTipo">Tipo de Alojamiento</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="alojamientoTipo"
-                  name="alojamientoTipo"
-                />
-              </div>
+    <!-- Contenedor de alojamientos -->
+    <div id="alojamientos-container" class="row">
+      <!-- Los alojamientos se cargarán aquí mediante JavaScript -->
+    </div>
+  </div>
 
-              <div class="mb-3">
-                <label for="numHabitaciones">Número de Habitaciones</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="numHabitaciones"
-                  name="numHabitaciones"
-                />
-              </div>
+  <!-- Modal de Agregar Alojamiento -->
+  <div class="modal fade" id="modal-alojamiento" tabindex="-1" aria-labelledby="modal-alojamiento-label"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-alojamiento-label">Agregar Alojamiento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
 
-              <div class="mb-3">
-                <label for="numBanos">Número de Baños</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="numBanos"
-                  name="numBanos"
-                />
-              </div>
+        <div class="modal-body">
+          <form id="form-alojamiento">
+            <!-- Input oculto para id en edición -->
+            <input type="hidden" name="id_alojamiento">
 
-              <div class="mb-3">
-                <label for="capacidad">Capacidad</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="capacidad"
-                  name="capacidad"
-                />
-              </div>
+            <!-- Campos del formulario -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre del Alojamiento</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
 
-              <div class="mb-3">
-                <label for="precioNoche">Precio por Noche</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  step="0.01"
-                  id="precioNoche"
-                  name="precioNoche"
-                />
-              </div>
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+            </div>
 
-              <div class="mb-3">
-                <label for="ubicacion">Ubicación</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="ubicacion"
-                  name="ubicacion"
-                  required
-                />
-              </div>
+            <div class="mb-3">
+              <label for="alojamientoTipo" class="form-label">Tipo de Alojamiento</label>
+              <select class="form-select" id="alojamientoTipo" name="alojamientoTipo" required>
+                <option value="Casa">Casa</option>
+                <option value="Departamento">Departamento</option>
+                <option value="Cabaña">Cabaña</option>
+              </select>
+            </div>
 
-              <div class="mb-3">
-                <label for="calificacion">Calificación</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  step="0.01"
-                  max="10"
-                  id="calificacion"
-                  name="calificacion"
-                />
-              </div>
+            <div class="mb-3">
+              <label for="numHabitaciones" class="form-label">Número de Habitaciones</label>
+              <input type="number" class="form-control" id="numHabitaciones" name="numHabitaciones" required>
+            </div>
 
-              <div class="mb-3">
-                <label for="imagen">Imagen Principal</label>
-                <input
-                  class="form-control"
-                  type="file"
-                  id="imagenFile"
-                  name="imagenFile"
-                  onchange="readURL(this);"
-                />
-                <img
-                  id="previewImage"
-                  src=""
-                  alt="Imagen del Alojamiento"
-                  height="200"
-                />
-              </div>
+            <div class="mb-3">
+              <label for="numBanos" class="form-label">Número de Baños</label>
+              <input type="number" class="form-control" id="numBanos" name="numBanos" required>
+            </div>
 
-              <div class="mb-3">
-                <label for="activo">Activo</label>
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="activo"
-                  name="activo"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              onclick="closeModal()"
-            >
-              Cerrar
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              id="save-alojamiento-btn"
-            >
-              Guardar Cambios
-            </button>
-          </div>
+            <div class="mb-3">
+              <label for="capacidad" class="form-label">Capacidad</label>
+              <input type="number" class="form-control" id="capacidad" name="capacidad" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="precioNoche" class="form-label">Precio por Noche</label>
+              <input type="number" class="form-control" id="precioNoche" name="precioNoche" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="ubicacion" class="form-label">Ubicación</label>
+              <input type="text" class="form-control" id="ubicacion" name="ubicacion" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="calificacion" class="form-label">Calificación</label>
+              <input type="number" class="form-control" id="calificacion" name="calificacion" min="1" max="5" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="activo" class="form-label">Activo</label>
+              <input type="checkbox" id="activo" name="activo" checked>
+            </div>
+
+            <!-- Campo para la URL de la imagen -->
+            <div class='mb-3'>
+              <label for='imagenUrl' class='form-label'>URL de la Imagen del Alojamiento</label>
+              <input type='text' class='form-control' id='imagenUrl' name='imagenUrl' required />
+            </div>
+
+            <!-- Botón para guardar -->
+            <button type='button' class='btn btn-primary' id='save-alojamiento-btn'>Guardar</button>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-    <footer class="footer text-center">
-      <div class="container px-3 py-2">
-        <section class="mb-2 w-50 mx-auto">
-          <a href="#!" class="text-white"
-            ><i class="fab fa-facebook-f fa-lg"></i
-          ></a>
-          <a href="#!" class="text-white"
-            ><i class="fab fa-twitter fa-lg mx-4 px-2"></i
-          ></a>
-          <a href="#!" class="text-white"
-            ><i class="fab fa-google fa-lg"></i
-          ></a>
-        </section>
-      </div>
-      <div class="text-center py-2 footer-bottom">
-        &COPY; Derechos reservados
-      </div>
-    </footer>
-    <script src="alojamientos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-  </body>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container px-3 py-2">
+      <section class="mb-2 w-50 mx-auto">
+        <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+        <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+      </section>
+    </div>
+    <div class="text-center py-2 footer-bottom">
+      &COPY; Derechos reservados
+    </div>
+  </footer>
+
+  <!-- Incluye Popper.js y Bootstrap desde un CDN -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js'></script>
+
+  <!-- Script para manejar alojamientos -->
+  <script src='js/alojamientosPropietarios.js'></script>
+  <!-- Script para manejar la navegación -->
+  <script src='js/navbar.js'></script>
+
+</body>
+
 </html>

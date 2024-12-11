@@ -1,0 +1,163 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(228, 227, 226);
+}
+
+.container {
+    padding: 2rem;
+}
+
+#pageHeaderTitle {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+}
+
+/* Navbar */
+.header {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+}
+
+.nav-item .avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Footer */
+.footer {
+    background-color: #212529;
+    padding: 1rem 0;
+}
+
+.footer-bottom {
+    background-color: #212529;
+    color: #93928e;
+}
+
+/* Layout */
+.row {
+    gap: 1rem; /* Espaciado entre tarjetas */
+}
+
+.col-md-4 {
+    flex: 1 1 30%;
+    max-width: 30%;
+    padding: 0.5rem;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Card */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    display: flex; /* Permite el uso de flexbox */
+    flex-direction: column; /* Alinea los hijos en columna */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Eleva la tarjeta ligeramente */
+    box-shadow: 0 12px 24px #0000004d; /* Sombra más pronunciada */
+    border: 2px solid #a8a8a8; /* Borde de color gris */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes de las tarjetas */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 1rem;
+    flex-grow: 1; /* Permite que el cuerpo de la tarjeta ocupe el espacio restante */
+}
+
+.card-title {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+/* Card details */
+.anfitrion {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.anfitrion-img {
+    width: 60px; /* Nuevo tamaño */
+    height: 60px; /* Nuevo tamaño */
+    border-radius: 50%; /* Mantiene la forma circular */
+    object-fit: cover; /* Asegura que la imagen se recorte sin deformarse */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+    border: 2px solid #ddd; /* Borde gris claro */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ubicacion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ubicacion img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .card-img-top {
+       height: 150px; /* Ajuste para pantallas pequeñas */
+   }
+
+   .anfitrion-img {
+       width: 50px; /* Tamaño ajustado para pantallas pequeñas */
+       height: 50px; /* Tamaño ajustado para pantallas pequeñas */
+   }
+}

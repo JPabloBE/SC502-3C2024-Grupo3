@@ -93,99 +93,98 @@
 }
 
 /* Index */
-.slide-image {
-  height: 680px;
-  object-fit: cover;
-  filter: brightness(0.7);
+.index * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.carousel-caption-static {
+/* Carrusel en el index */
+.index .slide-image {
+  width: 100%;
+  height: 100vh;  /* Hacer que las imágenes ocupen el alto total de la pantalla */
+  object-fit: cover; /* Mantener la proporción de la imagen */
+  filter: brightness(0.7); /* Filtro de brillo */
+}
+
+.index .carousel-caption-static {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  background-color: rgba(33, 36, 41, 0.9);
+  background-color: rgba(33, 36, 41, 0.7); 
   padding: 20px;
   border-radius: 10px;
   width: 90%;
   max-width: 800px;
 }
 
-.filtros-rapidos .form-row {
+.index .carousel {
+  margin-bottom: 0; 
+}
+
+.index .filtros-rapidos .form-row {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.filtros-rapidos .form-group {
+.index .filtros-rapidos .form-group {
   flex: 1;
   min-width: 120px;
   text-align: center;
 }
 
-.filtros-rapidos label {
+.index .filtros-rapidos label {
   display: block;
   text-align: center;
 }
 
-.filtros-rapidos .btn {
+.index .filtros-rapidos .btn {
   width: 100%;
   margin-top: 1.5rem;
   border-radius: 0.5rem;
   height: 38px;
 }
 
-/* Profile Info */
-.vh-100 {
-  height: 100vh;
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .index .footer {
+    padding-top: 0; 
+    margin-top: -1px; 
+  }
+
+  .index .carousel-item {
+    height: 60vh; 
+  }
+
+  .index .main-content-index {
+    padding-bottom: 0; 
+    margin-bottom: -1px; 
+  }
 }
 
-.gradient-custom {
-  position: relative;
-  background-image: url("/imgs/imagenCasa3.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.index body, .index html {
+  height: 100%;  
+  margin: 0; 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.overlay {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.index .main-content-index {
+  flex: 1;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding-bottom: 0;
 }
 
-.container {
-  z-index: 2;
-}
-
-.card {
-  border-radius: 1rem;
-}
-
-.profile-button {
-  background-color: #007bff;
-  border: none;
-}
-
-.profile-button:hover {
-  background-color: #0056b3;
-}
-
-.rounded-circle {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+.index footer {
+  margin-top: 0;  
+  padding-top: 0;
 }
 
 /* Propiedades de la vista propietarios */

@@ -40,15 +40,36 @@ document.addEventListener('DOMContentLoaded', async () => {
               <img src="/imgs/Location-icon.png" alt="Ícono de Ubicación" class="me-2" style="width: 20px; height: 20px;">
               <p class="card-text">Ubicación: <span>${alojamiento.ubicacion || 'No especificada'}</span></p>
             </div>
-            <a href="/usuario/alojamientos/${alojamiento.anfitrion_id}" class="btn btn-primary mt-3">Ver Detalle</a>
+            <div class="d-flex justify-content-between mt-3">
+              <a href="/usuario/alojamientos/${alojamiento.anfitrion_id}" class="btn btn-primary">Ver Detalle</a>
+              <button class="btn btn-success reservar-btn" data-id="${alojamiento.alojamiento_id}">Reservar Ahora</button>
+            </div>
           </div>
         </div>
       `;
       row.appendChild(card);
     });
+
+    // Manejar el evento de reserva
+    document.querySelectorAll('.reservar-btn').forEach(button => {
+      button.addEventListener('click', async (e) => {
+        const alojamientoId = e.target.getAttribute('data-id');
+        try {
+          const response = await fetch(`/reservar/${alojamientoId}`, { method: 'POST' });
+          if (response.ok) {
+            alert('Reserva realizada con éxito');
+          } else {
+            alert('Error al realizar la reserva. Inténtalo de nuevo más tarde.');
+          }
+        } catch (error) {
+          console.error('Error al realizar la reserva:', error);
+          alert('Error al conectar con el servidor. Inténtalo más tarde.');
+        }
+      });
+    });
+
   } catch (error) {
     console.error('Error al cargar los alojamientos:', error);
     alojamientosList.innerHTML = '<div class="text-danger text-center">Error al cargar los alojamientos. Por favor, intenta más tarde.</div>';
   }
-});  
-
+});

@@ -3,9 +3,9 @@
 require 'dbConection.php';
 
 // Datos del nuevo usuario
-$nombre = "hugo "; // Cambia esto por el nombre del usuario deseado
-$username = "hug ";     // Cambia esto por el nombre de usuario deseado
-$email = "hugg@example.com";   // Cambia esto por el email deseado
+$nombre = "Luis"; // Cambia esto por el nombre del usuario deseado
+$username = "luisg";     // Cambia esto por el nombre de usuario deseado
+$email = "luisg@example.com";   // Cambia esto por el email deseado
 $password = "contra";  // Cambia esto por la contraseña deseada
 $telefono = "1234567890";         // Cambia esto por el teléfono deseado
 $rol = "3";                 // Cambia esto por el rol deseado (ej. "admin", "usuario")

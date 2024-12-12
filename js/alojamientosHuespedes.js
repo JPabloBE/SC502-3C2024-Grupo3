@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
               <p class="card-text">Ubicación: <span>${alojamiento.ubicacion || 'No especificada'}</span></p>
             </div>
             <a href="/usuario/alojamientos/${alojamiento.anfitrion_id}" class="btn btn-primary mt-3">Ver Detalle</a>
-            <a href="reservas.html?alojamiento_id=${alojamiento.anfitrion_id}" class="btn btn-success mt-2">Reservar</a>
           </div>
         </div>
       `;
@@ -51,4 +50,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Error al cargar los alojamientos:', error);
     alojamientosList.innerHTML = '<div class="text-danger text-center">Error al cargar los alojamientos. Por favor, intenta más tarde.</div>';
   }
-});
+});  
+

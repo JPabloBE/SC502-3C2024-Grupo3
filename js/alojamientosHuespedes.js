@@ -57,7 +57,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
           const response = await fetch(`/reservar/${alojamientoId}`, { method: 'POST' });
           if (response.ok) {
-            alert('Reserva realizada con éxito');
+            window.location.href = "reservas.html";
+            alert('Ingreso exitoso');
           } else {
             alert('Error al realizar la reserva. Inténtalo de nuevo más tarde.');
           }

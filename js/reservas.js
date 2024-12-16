@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     }
                 } catch (error) {
                     console.error('Error al reservar:', error);
-                    alert('Error al procesar la reserva. Por favor, intenta más tarde.');
+                    alert('Error al procesar la reserva. Por favor, iniciar sesion ');
                 }
             });
         });
